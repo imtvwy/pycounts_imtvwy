@@ -2,11 +2,8 @@ name: ci-cd
 
 on:
   push:
-    branches:
-      - main
   pull_request:
-    branches:
-      - main
+
 
 jobs:
   ci:
