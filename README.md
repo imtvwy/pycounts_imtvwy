@@ -1,4 +1,4 @@
-Author: Vanessa 
+Author: Vanessa Yuen
 # pycounts_imtvwy
 
 To count words in a text file
