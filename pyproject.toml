@@ -1,6 +1,6 @@
 [tool.poetry]
 name = "pycounts_imtvwy"
-version = "0.2.1"
+version = "0.2.2"
 description = "To count words in a text file"
 authors = ["Vanessa Y"]
 license = "MIT"
