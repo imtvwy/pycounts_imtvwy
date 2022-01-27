@@ -49,30 +49,16 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-        
-    - name: Disable admin branch protection
-      uses: benjefferies/branch-protection-bot@master
-      if: always()
-      with:
-          access_token: ${{ secrets.ACCESS_TOKEN }}
-        
-          branch: main
-          enforce_admins: false
+      
           
-    # Step 4. Use PSR to make release (enable main branch protection after PSR)
+    # Step 3. Use PSR to make release
     - name: Python Semantic Release
       run: |
           pip install python-semantic-release
           git config user.name github-actions
           git config user.email github-actions@github.com
           semantic-release publish
-    - name: Enable admin branch protection
-      uses: benjefferies/branch-protection-bot@master
-      if: always()  # Force to always run this step to ensure "include administrators" is always turned back on
-      with:
-        access_token: ${{ secrets.ACCESS_TOKEN }}
-        branch: main
-        enforce_admins: true
+    
         
     # Step 5. Publish to TestPyPI
     - uses: pypa/gh-action-pypi-publish@release/v1
@@ -81,6 +67,7 @@ jobs:
         password: ${{ secrets.TEST_PYPI_API_TOKEN }}
         repository_url: https://test.pypi.org/legacy/
         skip_existing: true
+        
     # Step 6. Test install from TestPyPI
     - name: Test install from TestPyPI
       run: |
@@ -88,6 +75,7 @@ jobs:
           --index-url https://test.pypi.org/simple/ \
           --extra-index-url https://pypi.org/simple \
           pycounts_imtvwy
+          
     # Step 7. Publish to PyPI
     - uses: pypa/gh-action-pypi-publish@release/v1
       with:
