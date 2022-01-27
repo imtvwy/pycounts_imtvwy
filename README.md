@@ -1,3 +1,5 @@
+![ci-cd](https://github.com/imtvwy/pycounts_imtvwy/actions/workflows/ci-cd.yml/badge.svg)
+
 Author: Vanessa Yuen
 # pycounts_imtvwy
 
