@@ -1,4 +1,5 @@
 [![ci-cd](https://github.com/imtvwy/pycounts_imtvwy/actions/workflows/ci-cd.yml/badge.svg)](https://github.com/imtvwy/pycounts_imtvwy/actions/workflows/ci-cd.yml)
+[![codecov](https://codecov.io/github/imtvwy/pycounts_imtvwy/branch/main/graph/badge.svg)](https://codecov.io/github/imtvwy/pycounts_imtvwy)
 
 Author: Vanessa Yuen
 # pycounts_imtvwy
